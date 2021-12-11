@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const JournalEntry = ({ key }) => {
-	console.log(key);
+	// console.log(key);
 	return (
 		<div className="journal__entry pointer">
 			<div
