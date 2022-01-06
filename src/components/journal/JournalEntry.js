@@ -1,26 +1,29 @@
 import React from 'react';
+import moment from 'moment';
 
-export const JournalEntry = (/* { key } */) => {
-	// console.log(key);
+export const JournalEntry = ({ id, date, title, body, url }) => {
+	console.log(id, date, title, body, url);
+
+	const noteDate = moment(date);
+
 	return (
 		<div className="journal__entry pointer">
-			<div
-				className="journal__entry-picture"
-				style={{
-					backgroundSize: 'cover',
-					backgroundImage:
-						'url(https://siaguanta.com/wp-content/uploads/2020/05/que-es-wallpaper1.jpg)'
-				}}
-			></div>
+			{url && (
+				<div
+					className="journal__entry-picture"
+					style={{
+						backgroundSize: 'cover',
+						backgroundImage: `url(${url})`
+					}}
+				></div>
+			)}
 			<div className="journal__entry-body">
-				<p className="journal__entry-title">Un nuevo día</p>
-				<p className="journal__entry-content">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit.
-				</p>
+				<p className="journal__entry-title">{title}</p>
+				<p className="journal__entry-content">{body}</p>
 			</div>
 			<div className="journal__entry-date-box">
-				<span>Monday</span>
-				<h4>28</h4>
+				<span>{noteDate.format('dddd')}</span>
+				<h4>{noteDate.format('Do')}</h4>
 			</div>
 		</div>
 	);
