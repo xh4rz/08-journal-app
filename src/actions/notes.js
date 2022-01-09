@@ -3,6 +3,8 @@ import { db } from '../firebase/firebase-config';
 import { loadNotes } from '../helpers/loadNotes';
 import { types } from '../types/types';
 
+// react-journal
+
 export const startNewNote = () => {
 	return async (dispatch, getState) => {
 		const { uid } = getState().auth;
