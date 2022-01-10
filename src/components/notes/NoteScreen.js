@@ -49,10 +49,7 @@ export const NoteScreen = () => {
 				></textarea>
 				{note.url && (
 					<div className="notes__image">
-						<img
-							src="https://www.discordianos.com/uploads/monthly_2021_05/17010.jpg.21224097e1d74cd8bf7dddbca333a809.jpg"
-							alt="imagen"
-						/>
+						<img src={note.url} alt="imagen" />
 					</div>
 				)}
 			</div>
